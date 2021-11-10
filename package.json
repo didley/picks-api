@@ -1,0 +1,47 @@
+{
+  "type": "module",
+  "name": "picks-backend",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "http-errors": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.13",
+    "morgan": "^1.10.0",
+    "open-graph-scraper": "^4.9.1",
+    "validator": "^13.6.0"
+  },
+  "jest-junit": {
+    "outputDirectory": "../reports",
+    "outputName": "jest-junit.backend.xml",
+    "ancestorSeparator": " › ",
+    "uniqueOutputName": "false",
+    "suiteNameTemplate": "{filepath}",
+    "classNameTemplate": "{classname}",
+    "titleTemplate": "{title}"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.1",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-security": "^1.4.0",
+    "jest": "^27.2.0",
+    "jest-junit": "^13.0.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.1"
+  },
+  "engines": {
+    "node": "17.x"
+  },
+  "scripts": {
+    "start": "nodemon --experimental-specifier-resolution=node -r dotenv/config src/index.js",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --watch",
+    "ci-test": "node --experimental-vm-modules node_modules/.bin/jest --ci --reporters=default --reporters=jest-junit"
+  }
+}
