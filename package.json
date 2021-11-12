@@ -42,8 +42,8 @@
     "yarn": "3.x"
   },
   "scripts": {
-    "start": "node --experimental-specifier-resolution=node -r dotenv/config src/index.js",
-    "dev": "nodemon --experimental-specifier-resolution=node -r dotenv/config src/index.js",
+    "start": "node --experimental-specifier-resolution=node -r dotenv/config src/index",
+    "dev": "nodemon --experimental-specifier-resolution=node -r dotenv/config src/index",
     "test": "node --experimental-vm-modules node_modules/.bin/jest --watch",
     "ci-test": "node --experimental-vm-modules node_modules/.bin/jest --ci --reporters=default --reporters=jest-junit"
   },

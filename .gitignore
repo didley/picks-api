@@ -30,9 +30,9 @@ yarn-error.log*
 
 /reports
 
-# Zero-Installs option https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+# non Zero-Installs option https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored EMS not currently supported https://github.com/yarnpkg/berry/issues/638
+.pnp.*
 .yarn/*
-!.yarn/cache
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
