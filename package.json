@@ -39,8 +39,7 @@
     "prettier": "^2.3.1"
   },
   "engines": {
-    "node": "16.x",
-    "yarn": "3.x"
+    "node": "16.x"
   },
   "scripts": {
     "start": "node --experimental-specifier-resolution=node -r dotenv/config src/index",
