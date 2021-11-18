@@ -46,6 +46,5 @@
     "dev": "nodemon --experimental-specifier-resolution=node -r dotenv/config src/index",
     "test": "node --experimental-vm-modules node_modules/.bin/jest --watch",
     "ci-test": "node --experimental-vm-modules node_modules/.bin/jest --ci --reporters=default --reporters=jest-junit"
-  },
-  "packageManager": "yarn@3.1.0"
+  }
 }
