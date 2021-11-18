@@ -10,7 +10,13 @@ import cors from "cors";
 mongoose.set("debug", process.env.MONGOOSE_DEBUG === "true" || false);
 
 const app = express();
-app.use(cors({ origin: process.env.CLIENT_URL, optionsSuccessStatus: 200 }));
+
+const allowedOrigins = [
+  "https://picks.didley.dev",
+  "https://didley-picks.netlify.app",
+];
+
+app.use(cors({ origin: allowedOrigins, optionsSuccessStatus: 200 }));
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(helmet());
