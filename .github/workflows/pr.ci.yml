@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [17.x]
+        node-version: [16.x]
 
     steps:
       - name: Checkout project
@@ -24,7 +24,7 @@ jobs:
 
       - name: Run backend tests
         if: always()
-        run: cd backend && yarn run ci-test
+        run: yarn run ci-test
 
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
