@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { User } from "../components/user/user.model";
 
-const SECRET = process.env.APP_SECRET;
+const SECRET = process.env.JWT_SECRET;
 
 export const generateToken = (userId) => {
   const thirtyMinInMs = String(1000 * 60 * 30);
