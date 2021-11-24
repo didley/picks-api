@@ -5,13 +5,13 @@ import mongoose from "mongoose";
 import { router } from "./components/router";
 import { db } from "./utils/db";
 import { handle404, handleErrors } from "./utils/middleware";
-import cors from "cors";
+import { corsConfig } from "./utils/corsConfig";
 
 mongoose.set("debug", process.env.MONGOOSE_DEBUG === "true" || false);
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL, optionsSuccessStatus: 200 }));
+app.use(corsConfig());
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(helmet());
