@@ -28,6 +28,10 @@ cardSchema.pre("save", async function (next) {
   // ! Workaround: using this.toObject() as 'this' is a mongoose doc and not a plain js object, causing issues with is empty obj equality check
   const { picks } = this.toObject();
 
+  if (!picks.length) {
+    next(new Error("At least one pick required"));
+  }
+
   if (picks.length > 5) {
     next(new Error("You can't have more than 5 picks"));
   }
