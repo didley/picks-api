@@ -41,7 +41,9 @@ const getCardById = async (req, res, next) => {
 const createCard = async (req, res, next) => {
   const createdBy = req.user._id;
 
-  const card = req.body;
+  let card = req.body;
+
+  if (card.tags) card.tags = card.tags.toString().split(" ");
 
   const truncatedCard = truncatePicksWithinCard(card);
 
@@ -55,7 +57,9 @@ const createCard = async (req, res, next) => {
 };
 
 const updateCard = async (req, res, next) => {
-  const card = req.body;
+  let card = req.body;
+
+  if (card.tags) card.tags = card.tags.toString().split(" ");
 
   const truncatedCard = truncatePicksWithinCard(card);
 
