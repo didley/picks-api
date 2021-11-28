@@ -13,7 +13,7 @@ const getCardsByUsername = async (req, res, next) => {
     const user = await User.findOne({ username: usernameQueryString });
     const docs = await Card.find({ createdBy: user._id })
       .sort("-createdAt")
-      .populate("createdBy", "username -_id");
+      .populate("createdBy", "username name -_id");
 
     res.status(200).json({ data: docs });
   } catch (err) {
@@ -27,7 +27,7 @@ const getCardById = async (req, res, next) => {
   try {
     const doc = await Card.findOne({ _id: cardId }).populate(
       "createdBy",
-      "username -_id"
+      "username name -_id"
     );
 
     if (!doc) return res.status(400).end();
@@ -49,7 +49,7 @@ const createCard = async (req, res, next) => {
 
   try {
     let doc = await Card.create({ ...truncatedCard, createdBy });
-    doc = await doc.populate("createdBy", "username -_id").execPopulate();
+    doc = await doc.populate("createdBy", "username name -_id").execPopulate();
     res.status(201).json({ data: doc });
   } catch (err) {
     next(httpErr(400, err));
@@ -74,7 +74,7 @@ const updateCard = async (req, res, next) => {
     );
 
     updatedDoc = await updatedDoc
-      .populate("createdBy", "username -_id")
+      .populate("createdBy", "username name -_id")
       .execPopulate();
 
     if (!updatedDoc) {
