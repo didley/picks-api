@@ -43,8 +43,6 @@ const createCard = async (req, res, next) => {
 
   let card = req.body;
 
-  if (card.tags) card.tags = card.tags.toString().split(" ");
-
   const truncatedCard = truncatePicksWithinCard(card);
 
   try {
@@ -58,8 +56,6 @@ const createCard = async (req, res, next) => {
 
 const updateCard = async (req, res, next) => {
   let card = req.body;
-
-  if (card.tags) card.tags = card.tags.toString().split(" ");
 
   const truncatedCard = truncatePicksWithinCard(card);
 
