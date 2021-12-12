@@ -22,6 +22,7 @@ export const pickSchema = new mongoose.Schema(
       ogType: { type: String, maxLength: 120 },
       ogLocale: { type: String, maxLength: 10 },
     },
+    comments: { type: String, maxLength: 200 },
   },
   { timestamps: true }
 );
