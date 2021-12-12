@@ -19,7 +19,7 @@ $ yarn install
 
 ```console
 # run backend
-$ yarn start
+$ yarn run dev
 
 # run backend tests
 $ yarn test
